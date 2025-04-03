@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drgkuvnub7h4"]
+
+[ext_resource type="AudioStream" uid="uid://del03d0jrmr54" path="res://sounds/RPG_Essentials_Free/12_Player_Movement_SFX/30_Jump_03.wav" id="1_hqmwj"]
+
+[node name="jump" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_hqmwj")

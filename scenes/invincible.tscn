@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqh5kabc1dg7"]
+
+[ext_resource type="AudioStream" uid="uid://dq2d2xuqp5pru" path="res://sounds/RPG_Essentials_Free/12_Player_Movement_SFX/88_Teleport_02.wav" id="1_lde3p"]
+
+[node name="invincible" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_lde3p")
+volume_db = -5.0

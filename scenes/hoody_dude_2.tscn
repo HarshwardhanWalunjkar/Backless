@@ -1,0 +1,138 @@
+[gd_scene load_steps=18 format=3 uid="uid://4wshk0xrlaxx"]
+
+[ext_resource type="Texture2D" uid="uid://bl27uaaw1igco" path="res://assets/Hooded Protagonist/AnimationSheet_Character.png" id="1_alnvd"]
+[ext_resource type="Script" path="res://scripts/hoody_dude_2.gd" id="1_prl62"]
+[ext_resource type="PackedScene" uid="uid://c16v0ymvc8w0m" path="res://scenes/encounter.tscn" id="3_a7r3g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5m1l"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lidhs"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ujbk"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntohj"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyxep"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etnlp"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8osj"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8201v"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02m5b"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43xqw"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcx66"]
+atlas = ExtResource("1_alnvd")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kng1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5m1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lidhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5m1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lidhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5m1l")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ujbk")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntohj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyxep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etnlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8osj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8201v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02m5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43xqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcx66")
+}],
+"loop": false,
+"name": &"get_up",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1pp"]
+size = Vector2(12, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gxdl"]
+size = Vector2(0.5, 0.5)
+
+[node name="hoody_dude_2" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_prl62")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kng1h")
+animation = &"get_up"
+autoplay = "dead"
+
+[node name="stand_col" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_ds1pp")
+
+[node name="FloatCol" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20.75)
+shape = SubResource("RectangleShape2D_7gxdl")
+
+[node name="Timer_GetUp" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="encounter" parent="." instance=ExtResource("3_a7r3g")]

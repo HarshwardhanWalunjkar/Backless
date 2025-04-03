@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://broag776ubsou"]
+
+[ext_resource type="Texture2D" uid="uid://1xacdrfhwdxi" path="res://assets/UI assets/Pixel UI pack 3/06.png" id="1_cjinh"]
+[ext_resource type="Script" path="res://scripts/invinc_bar.gd" id="2_vjjqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdp4"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(0, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iblou"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(192, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jx46"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(144, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjumo"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(96, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdeg4"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(48, 32, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2sla"]
+atlas = ExtResource("1_cjinh")
+region = Rect2(0, 32, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivosm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcdp4")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iblou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jx46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjumo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdeg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2sla")
+}],
+"loop": true,
+"name": &"refresh",
+"speed": 1.0
+}]
+
+[node name="invinc_bar" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ivosm")
+animation = &"full"
+autoplay = "full"
+script = ExtResource("2_vjjqg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

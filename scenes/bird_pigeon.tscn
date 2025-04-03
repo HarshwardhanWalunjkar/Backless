@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dflbtwp8citt1"]
+
+[ext_resource type="Script" path="res://scripts/bird_pigeon.gd" id="1_8ea3m"]
+[ext_resource type="Texture2D" uid="uid://cvrcpufvwmqdi" path="res://assets/obtacles and pickups/craftpix-net-358112-free-street-animal-pixel-art-asset-pack/8 Bird 2/Walk.png" id="2_5ohj6"]
+[ext_resource type="PackedScene" uid="uid://d05bd7q2yl0hu" path="res://scenes/killzone.tscn" id="3_m0svf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqqga"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1qo5"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktg8m"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dd72"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l68qo"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuq88"]
+atlas = ExtResource("2_5ohj6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei48s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqqga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1qo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktg8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dd72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l68qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuq88")
+}],
+"loop": true,
+"name": &"fly_pigeon",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry66u"]
+size = Vector2(41, 25)
+
+[node name="bird_pigeon" type="Node2D"]
+script = ExtResource("1_8ea3m")
+
+[node name="enemy" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -29)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ei48s")
+animation = &"fly_pigeon"
+frame = 1
+frame_progress = 0.286143
+flip_h = true
+
+[node name="killzone" parent="." instance=ExtResource("3_m0svf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(7, -4)
+shape = SubResource("RectangleShape2D_ry66u")

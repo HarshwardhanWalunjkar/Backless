@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw3wyjnuvyb5u"]
+
+[ext_resource type="AudioStream" uid="uid://c0mn4ejmskwmp" path="res://sounds/RPG_Essentials_Free/10_Battle_SFX/35_Miss_Evade_02.wav" id="1_nk14x"]
+
+[node name="duck" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_nk14x")
+volume_db = -10.0

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgfcht1lsqmwi"]
+
+[ext_resource type="AudioStream" uid="uid://bd6hqw1lqlryi" path="res://sounds/RPG_Essentials_Free/8_Atk_Magic_SFX/13_Ice_explosion_01.wav" id="1_xbyq3"]
+
+[node name="backless_orb" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_xbyq3")

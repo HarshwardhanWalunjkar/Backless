@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6a4omlgbaeyv"]
+
+[ext_resource type="AudioStream" uid="uid://ds8d8iiucdeqv" path="res://sounds/RPG_Essentials_Free/10_Battle_SFX/69_Enemy_death_01.wav" id="1_8dqq5"]
+
+[node name="death" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8dqq5")
+volume_db = -5.0

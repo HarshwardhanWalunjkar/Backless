@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c16v0ymvc8w0m"]
+
+[ext_resource type="AudioStream" uid="uid://cmu2wpoio4lsq" path="res://sounds/RPG_Essentials_Free/10_Battle_SFX/55_Encounter_02.wav" id="1_tlkhq"]
+
+[node name="encounter" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_tlkhq")
+volume_db = -5.0

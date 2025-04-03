@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wqyaft3qpomx"]
+
+[ext_resource type="AudioStream" uid="uid://cw34tv1iq0cxk" path="res://sounds/RPG_Essentials_Free/12_Player_Movement_SFX/61_Hit_03.wav" id="1_h31dw"]
+
+[node name="hit" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_h31dw")
+volume_db = -5.0

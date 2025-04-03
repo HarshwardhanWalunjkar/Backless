@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://c46es2q8dg3mc"]
+
+[ext_resource type="PackedScene" uid="uid://4wshk0xrlaxx" path="res://scenes/hoody_dude_2.tscn" id="1_bjje0"]
+[ext_resource type="Script" path="res://scripts/game_scene_2.gd" id="1_p7u41"]
+[ext_resource type="PackedScene" uid="uid://fnqw87la4y7u" path="res://scenes/parallax_background_2.tscn" id="2_fffnh"]
+[ext_resource type="PackedScene" uid="uid://6nadshqyjs5p" path="res://scenes/parallax_background_2_1.tscn" id="2_mfpgh"]
+[ext_resource type="PackedScene" uid="uid://d13b5sq7pfvq4" path="res://scenes/anti.tscn" id="3_vay4m"]
+[ext_resource type="PackedScene" uid="uid://d27t5p75shf4o" path="res://scenes/Ground.tscn" id="4_fuivj"]
+[ext_resource type="Script" path="res://scripts/anti.gd" id="4_jsefb"]
+
+[node name="Game_Scene_2" type="Node2D"]
+script = ExtResource("1_p7u41")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(600, 29)
+offset = Vector2(0, 450)
+limit_left = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="hoody_dude_2" parent="." instance=ExtResource("1_bjje0")]
+unique_name_in_owner = true
+position = Vector2(712, 662)
+
+[node name="anti" parent="." instance=ExtResource("3_vay4m")]
+visible = false
+position = Vector2(1081, 662)
+script = ExtResource("4_jsefb")
+
+[node name="BG" type="Node" parent="."]
+
+[node name="ParallaxBackground_2_1" parent="BG" instance=ExtResource("2_mfpgh")]
+
+[node name="ParallaxBackground_2" parent="BG" instance=ExtResource("2_fffnh")]
+visible = false
+
+[node name="Ground" parent="BG" instance=ExtResource("4_fuivj")]
+unique_name_in_owner = true
+position = Vector2(0, -29)
+
+[node name="Timer_Scene_1" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_Scene_hold" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true

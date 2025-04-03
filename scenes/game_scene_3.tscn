@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://b41ovckqtl18d"]
+
+[ext_resource type="Script" path="res://scripts/game_scene_3.gd" id="1_10bis"]
+[ext_resource type="PackedScene" uid="uid://bm17fd86lfkc0" path="res://scenes/hoody_dude_3.tscn" id="1_ck3lj"]
+[ext_resource type="PackedScene" uid="uid://dcl6w6dlttldb" path="res://scenes/anti_3.tscn" id="3_fbd73"]
+[ext_resource type="PackedScene" uid="uid://7ahniilk75xk" path="res://scenes/parallax_background_3.tscn" id="3_y05fo"]
+[ext_resource type="PackedScene" uid="uid://d27t5p75shf4o" path="res://scenes/Ground.tscn" id="4_051vy"]
+[ext_resource type="Script" path="res://scripts/parallax_background_3.gd" id="7_ec3id"]
+[ext_resource type="Script" path="res://scripts/backless.gd" id="7_fo8a6"]
+[ext_resource type="PackedScene" uid="uid://broag776ubsou" path="res://scenes/invinc_bar.tscn" id="7_x275v"]
+[ext_resource type="Texture2D" uid="uid://ue6dq3mcvj3r" path="res://assets/UI assets/Pixel UI pack 3/03.png" id="8_bknp3"]
+[ext_resource type="Texture2D" uid="uid://c6mbu6xssi1gp" path="res://assets/Effects_Orbs/Water Vortex Splash-Sheet.png" id="10_fwk8h"]
+
+[node name="game_scene_3" type="Node2D"]
+script = ExtResource("1_10bis")
+
+[node name="hoody_dude_3" parent="." instance=ExtResource("1_ck3lj")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(600, 29)
+offset = Vector2(0, 450)
+
+[node name="anti_3" parent="." instance=ExtResource("3_fbd73")]
+
+[node name="genobs" type="Timer" parent="."]
+one_shot = true
+
+[node name="BG" type="Node" parent="."]
+
+[node name="ParallaxBackground_3" parent="BG" instance=ExtResource("3_y05fo")]
+script = ExtResource("7_ec3id")
+
+[node name="Ground" parent="BG" instance=ExtResource("4_051vy")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_left = 515.0
+offset_top = 29.0
+offset_right = 618.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+horizontal_alignment = 1
+
+[node name="backless" type="Label" parent="CanvasLayer"]
+offset_left = 1109.0
+offset_top = -81.0
+offset_right = 1348.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 1
+text = "0
+"
+script = ExtResource("7_fo8a6")
+
+[node name="state1" type="Sprite2D" parent="CanvasLayer/backless"]
+position = Vector2(-17.8733, 161.951)
+rotation = 0.0096315
+scale = Vector2(2.35512, 2.24308)
+texture = ExtResource("8_bknp3")
+region_enabled = true
+region_rect = Rect2(1, 1, 46, 46)
+
+[node name="state2" type="Sprite2D" parent="CanvasLayer/backless"]
+visible = false
+position = Vector2(-17.8733, 161.951)
+rotation = 0.0096315
+scale = Vector2(2.35512, 2.24308)
+texture = ExtResource("8_bknp3")
+region_enabled = true
+region_rect = Rect2(49, 1, 46, 46)
+
+[node name="state3" type="Sprite2D" parent="CanvasLayer/backless"]
+visible = false
+position = Vector2(-17.8733, 161.951)
+rotation = 0.0096315
+scale = Vector2(2.35512, 2.24308)
+texture = ExtResource("8_bknp3")
+region_enabled = true
+region_rect = Rect2(97, 1, 46, 46)
+
+[node name="state4" type="Sprite2D" parent="CanvasLayer/backless"]
+visible = false
+position = Vector2(-17.8733, 161.951)
+rotation = 0.0096315
+scale = Vector2(2.35512, 2.24308)
+texture = ExtResource("8_bknp3")
+region_enabled = true
+region_rect = Rect2(145, 1, 46, 46)
+
+[node name="state5" type="Sprite2D" parent="CanvasLayer/backless"]
+visible = false
+position = Vector2(-17.8733, 161.951)
+rotation = 0.0096315
+scale = Vector2(2.35512, 2.24308)
+texture = ExtResource("8_bknp3")
+region_enabled = true
+region_rect = Rect2(193, 1, 46, 46)
+
+[node name="invinc_bar" parent="CanvasLayer" instance=ExtResource("7_x275v")]
+unique_name_in_owner = true
+position = Vector2(106, 70)
+scale = Vector2(3.833, 5.75)
+
+[node name="orb" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1094, 83)
+scale = Vector2(3, 3)
+texture = ExtResource("10_fwk8h")
+region_enabled = true
+region_rect = Rect2(56, 208, 38, 34)

@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://doboxj3kl3gpe"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_fqkgc"]
+[ext_resource type="PackedScene" uid="uid://b6qywh6jcxbcl" path="res://scenes/parallax_background.tscn" id="1_j0uq6"]
+[ext_resource type="PackedScene" uid="uid://d27t5p75shf4o" path="res://scenes/Ground.tscn" id="2_vcuk7"]
+[ext_resource type="PackedScene" uid="uid://di2as0kolu7mk" path="res://scenes/hoody_dude.tscn" id="3_yffiw"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="5_c0o46"]
+[ext_resource type="Texture2D" uid="uid://3cgbg7icxnwy" path="res://assets/UI assets/Pixel UI pack 3/00.png" id="6_b6okv"]
+[ext_resource type="Script" path="res://scripts/CountDeath.gd" id="6_df7fl"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="6_kyuyk"]
+[ext_resource type="PackedScene" uid="uid://broag776ubsou" path="res://scenes/invinc_bar.tscn" id="9_fvrh6"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_fqkgc")
+metadata/_edit_horizontal_guides_ = [316.0]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(600, 29)
+offset = Vector2(0, 450)
+limit_left = 0
+position_smoothing_enabled = true
+
+[node name="hoody_dude" parent="." instance=ExtResource("3_yffiw")]
+unique_name_in_owner = true
+position = Vector2(38, 660)
+
+[node name="BG" type="Node" parent="."]
+
+[node name="ParallaxBackground" parent="BG" instance=ExtResource("1_j0uq6")]
+
+[node name="Ground" parent="BG" instance=ExtResource("2_vcuk7")]
+unique_name_in_owner = true
+position = Vector2(0, -30)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 515.0
+offset_top = 29.0
+offset_right = 618.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+horizontal_alignment = 1
+script = ExtResource("5_c0o46")
+
+[node name="CountDeath" type="Label" parent="CanvasLayer"]
+offset_left = 1113.0
+offset_top = 29.0
+offset_right = 1146.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 1
+script = ExtResource("6_df7fl")
+
+[node name="1" type="Sprite2D" parent="CanvasLayer/CountDeath"]
+position = Vector2(5.00001, 42)
+scale = Vector2(4.375, 4)
+texture = ExtResource("6_b6okv")
+region_enabled = true
+region_rect = Rect2(114, 114, 12, 12)
+
+[node name="2" type="Sprite2D" parent="CanvasLayer/CountDeath"]
+position = Vector2(-56, 42)
+scale = Vector2(4.375, 4)
+texture = ExtResource("6_b6okv")
+region_enabled = true
+region_rect = Rect2(114, 114, 12, 12)
+
+[node name="3" type="Sprite2D" parent="CanvasLayer/CountDeath"]
+position = Vector2(-121, 42)
+scale = Vector2(4.375, 4)
+texture = ExtResource("6_b6okv")
+region_enabled = true
+region_rect = Rect2(114, 114, 12, 12)
+
+[node name="invinc_bar" parent="CanvasLayer" instance=ExtResource("9_fvrh6")]
+unique_name_in_owner = true
+position = Vector2(106, 70)
+scale = Vector2(3.83333, 5.75)
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("6_kyuyk")
+
+[node name="obstimer" type="Timer" parent="."]
+one_shot = true

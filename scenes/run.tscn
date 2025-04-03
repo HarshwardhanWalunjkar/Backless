@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgcfh1m2xyorf"]
+
+[ext_resource type="AudioStream" uid="uid://bigjepyqngr4r" path="res://sounds/RPG_Essentials_Free/12_Player_Movement_SFX/03_Step_grass_03.wav" id="1_rmvs6"]
+
+[node name="run" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rmvs6")
+volume_db = -10.0

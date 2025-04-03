@@ -1,0 +1,113 @@
+[gd_scene load_steps=17 format=3 uid="uid://d4ltxs4siy7my"]
+
+[ext_resource type="Script" path="res://scripts/detectzone_piranha.gd" id="1_onnij"]
+[ext_resource type="Texture2D" uid="uid://itmdn1idj6og" path="res://assets/obtacles and pickups/piranha-plant-attack.png" id="1_pyvhg"]
+[ext_resource type="PackedScene" uid="uid://d05bd7q2yl0hu" path="res://scenes/killzone.tscn" id="2_3y122"]
+[ext_resource type="Texture2D" uid="uid://s4y1qud65hve" path="res://assets/obtacles and pickups/piranha-plant.png" id="2_h7rxr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfsj4"]
+atlas = ExtResource("1_pyvhg")
+region = Rect2(0, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1glq1"]
+atlas = ExtResource("1_pyvhg")
+region = Rect2(61, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atwtm"]
+atlas = ExtResource("1_pyvhg")
+region = Rect2(122, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y2r7"]
+atlas = ExtResource("1_pyvhg")
+region = Rect2(183, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pifp6"]
+atlas = ExtResource("2_h7rxr")
+region = Rect2(0, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enxdv"]
+atlas = ExtResource("2_h7rxr")
+region = Rect2(61, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rx7c"]
+atlas = ExtResource("2_h7rxr")
+region = Rect2(122, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixrnw"]
+atlas = ExtResource("2_h7rxr")
+region = Rect2(183, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fsng"]
+atlas = ExtResource("2_h7rxr")
+region = Rect2(244, 0, 61, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwgtt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfsj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1glq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atwtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y2r7")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pifp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enxdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rx7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixrnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fsng")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfvnu"]
+size = Vector2(298, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mqhs"]
+size = Vector2(64, 59)
+
+[node name="Piranha_Plant" type="Node2D"]
+
+[node name="enemy" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bwgtt")
+animation = &"attack"
+frame = 3
+frame_progress = 0.857995
+
+[node name="detectzone_piranha" type="Area2D" parent="."]
+script = ExtResource("1_onnij")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectzone_piranha"]
+position = Vector2(-108, -13.5)
+shape = SubResource("RectangleShape2D_qfvnu")
+
+[node name="killzone" parent="." instance=ExtResource("2_3y122")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-34, 14)
+shape = SubResource("RectangleShape2D_3mqhs")
+
+[connection signal="body_entered" from="detectzone_piranha" to="detectzone_piranha" method="_on_body_entered"]

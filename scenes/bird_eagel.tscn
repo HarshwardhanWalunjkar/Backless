@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://dgwxcn04k5o3a"]
+
+[ext_resource type="Script" path="res://scripts/Bird_Eagel.gd" id="1_vj2re"]
+[ext_resource type="Texture2D" uid="uid://bgvlyynu003n5" path="res://assets/obtacles and pickups/craftpix-net-358112-free-street-animal-pixel-art-asset-pack/7 Bird/Walk.png" id="2_qeweh"]
+[ext_resource type="PackedScene" uid="uid://d05bd7q2yl0hu" path="res://scenes/killzone.tscn" id="3_tghn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jewet"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hromk"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtpqk"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ow2"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eljkd"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0qyr"]
+atlas = ExtResource("2_qeweh")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cyoj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jewet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hromk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtpqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ow2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eljkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0qyr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r15oc"]
+size = Vector2(60.5, 37)
+
+[node name="Bird_Eagel" type="Node2D"]
+script = ExtResource("1_vj2re")
+
+[node name="enemy" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_cyoj0")
+frame = 2
+frame_progress = 0.764686
+flip_h = true
+
+[node name="killzone" parent="." instance=ExtResource("3_tghn0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0.25, 14.5)
+shape = SubResource("RectangleShape2D_r15oc")

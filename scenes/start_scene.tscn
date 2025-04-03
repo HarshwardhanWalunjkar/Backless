@@ -1,0 +1,194 @@
+[gd_scene load_steps=30 format=3 uid="uid://dwf7wwh5a002m"]
+
+[ext_resource type="Texture2D" uid="uid://booipurk5nguw" path="res://assets/Designer (1).jpeg" id="1_0vjek"]
+[ext_resource type="FontFile" uid="uid://bhpiw5y7ghydc" path="res://stepalange-font/Stepalange-x3BLm.otf" id="2_8rt0e"]
+[ext_resource type="Texture2D" uid="uid://bagrtbap23yc8" path="res://assets/UI assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Large_Lock_01a1.png" id="3_8emfm"]
+[ext_resource type="Texture2D" uid="uid://baup4um3mk0tb" path="res://assets/UI assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Large_Lock_01a2.png" id="4_68uin"]
+[ext_resource type="Texture2D" uid="uid://yulrmxqebf1" path="res://assets/UI assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Large_Lock_01a3.png" id="5_3invk"]
+[ext_resource type="Texture2D" uid="uid://ddrcaivrvs3cv" path="res://assets/UI assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Large_Lock_01a4.png" id="6_3klak"]
+[ext_resource type="Script" path="res://scripts/start.gd" id="7_4s423"]
+[ext_resource type="Script" path="res://scripts/quit.gd" id="7_fyub8"]
+[ext_resource type="Texture2D" uid="uid://cx7vpfj365omp" path="res://assets/UI assets/Retro Pixel Ribbons, Banners and Frames 2/02.png" id="7_qabto"]
+[ext_resource type="Texture2D" uid="uid://fe6o554iw5p" path="res://assets/UI assets/Lucid-V1.2/Lucid V1.2/PNG/Shadow/160/Forward.png" id="8_548d7"]
+[ext_resource type="Script" path="res://scripts/song_title.gd" id="8_bq7t4"]
+[ext_resource type="Texture2D" uid="uid://bl1tbj4fyhqxj" path="res://assets/UI assets/Lucid-V1.2/Lucid V1.2/PNG/Shadow/160/Backward.png" id="9_1ud7r"]
+[ext_resource type="Script" path="res://scripts/forward.gd" id="9_bm0wf"]
+[ext_resource type="Script" path="res://scripts/backward.gd" id="11_oe75p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dorw2"]
+texture = ExtResource("3_8emfm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ttuou"]
+texture = ExtResource("4_68uin")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33cxs"]
+texture = ExtResource("5_3invk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2bqa"]
+texture = ExtResource("6_3klak")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4e5f2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xisf4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ak3fy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8il3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeyep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgfbo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwuyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy1jm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65abf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uky0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlvhb"]
+
+[node name="StartScene" type="Node2D"]
+
+[node name="Designer(1)" type="Sprite2D" parent="."]
+position = Vector2(571.5, 321.5)
+scale = Vector2(0.647879, 0.643555)
+texture = ExtResource("1_0vjek")
+
+[node name="quit" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 257.0
+offset_right = 292.0
+offset_bottom = 351.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_pressed_color = Color(0.780221, 0.0794836, 0.220351, 1)
+theme_override_colors/font_hover_color = Color(0.68173, 0.0586038, 0.186636, 1)
+theme_override_colors/font_focus_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_disabled_color = Color(0.0901961, 0.0823529, 0.380392, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.666667)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.796078)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0.756863)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0.866667)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8rt0e")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_dorw2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttuou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_33cxs")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x2bqa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4e5f2")
+text = "QUIT"
+text_direction = 3
+script = ExtResource("7_fyub8")
+
+[node name="start" type="Button" parent="."]
+offset_left = 38.0
+offset_top = 117.0
+offset_right = 290.0
+offset_bottom = 211.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_pressed_color = Color(0.780221, 0.0794836, 0.220351, 1)
+theme_override_colors/font_hover_color = Color(0.68173, 0.0586038, 0.186636, 1)
+theme_override_colors/font_focus_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_colors/font_disabled_color = Color(0.0901961, 0.0823529, 0.380392, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.666667)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0.796078)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0.756863)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0.866667)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8rt0e")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_dorw2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ttuou")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_33cxs")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x2bqa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xisf4")
+text = "START"
+text_direction = 3
+script = ExtResource("7_4s423")
+
+[node name="backless_title" type="Label" parent="."]
+offset_left = 742.0
+offset_top = 186.0
+offset_right = 1138.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(0.333017, 0.537533, 1, 1)
+theme_override_fonts/font = ExtResource("2_8rt0e")
+theme_override_font_sizes/font_size = 110
+text = "BACKLESS"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(558.842, 620.8)
+scale = Vector2(6.32582, -3.98336)
+texture = ExtResource("7_qabto")
+region_enabled = true
+region_rect = Rect2(131, 4, 42, 24)
+
+[node name="song_title" type="Label" parent="."]
+offset_left = 452.0
+offset_top = 590.0
+offset_right = 674.0
+offset_bottom = 653.0
+theme_override_colors/font_color = Color(0.592157, 0.0431373, 0.156863, 1)
+theme_override_fonts/font = ExtResource("2_8rt0e")
+theme_override_font_sizes/font_size = 20
+text = "symphony of destruction-megadeath"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("8_bq7t4")
+
+[node name="forward" type="Button" parent="."]
+offset_left = 692.0
+offset_top = 605.0
+offset_right = 840.0
+offset_bottom = 753.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/icon_normal_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_colors/icon_pressed_color = Color(0.117647, 0.435294, 0.313726, 1)
+theme_override_colors/icon_hover_color = Color(0.333333, 0.74902, 0.305882, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.117647, 0.435294, 0.313726, 1)
+theme_override_colors/icon_focus_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_colors/icon_disabled_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ak3fy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p8il3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qeyep")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qgfbo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wwuyn")
+icon = ExtResource("8_548d7")
+script = ExtResource("9_bm0wf")
+
+[node name="backward" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 605.0
+offset_right = 532.0
+offset_bottom = 753.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/icon_normal_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_colors/icon_pressed_color = Color(0.117647, 0.435294, 0.313726, 1)
+theme_override_colors/icon_hover_color = Color(0.333333, 0.74902, 0.305882, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.117647, 0.435294, 0.313726, 1)
+theme_override_colors/icon_focus_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_colors/icon_disabled_color = Color(0.796078, 0.945098, 0.478431, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dy1jm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_65abf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uky0m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jlvhb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wwuyn")
+icon = ExtResource("9_1ud7r")
+script = ExtResource("11_oe75p")
+
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
+[connection signal="pressed" from="start" to="start" method="_on_pressed"]
+[connection signal="pressed" from="forward" to="forward" method="_on_pressed"]
+[connection signal="pressed" from="backward" to="backward" method="_on_pressed"]

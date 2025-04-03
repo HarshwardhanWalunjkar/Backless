@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qe8fenolx0yp"]
+
+[ext_resource type="AudioStream" uid="uid://d4i6ys8kroily" path="res://sounds/RPG_Essentials_Free/12_Player_Movement_SFX/45_Landing_01.wav" id="1_e5eck"]
+
+[node name="Landing" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_e5eck")

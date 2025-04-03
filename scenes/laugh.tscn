@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv7fav4n1vwqy"]
+
+[ext_resource type="AudioStream" uid="uid://lf7njnyj1dxm" path="res://sounds/Super Dialogue Audio Pack v1/Super Dialogue Audio Pack v1/Step 2 - Audio Files/6 - Miscellaneous/Male/Sean Lenhart/miscellaneous_16_sean----.wav" id="1_6k1bg"]
+
+[node name="laugh" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6k1bg")
+volume_db = -5.0
